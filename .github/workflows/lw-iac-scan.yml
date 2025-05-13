@@ -43,8 +43,9 @@ jobs:
                 
             - name: Scan the repo for vulnerabilities in IaC
               run: |
-                docker run --env-file env.list -v "$(pwd):/app/src" -w /app/src lacework/codesec:latest lacework iac scan --directory=.
-
+                docker run --env-file env.list -v "$(pwd):/app/src" -w /app/src lacework/codesec:latest lacework iac scan --save-result lwscanoutput.json --directory=.
+                echo "Display iacscan output"
+                cat lwscanoutput.json
             # Terraform Init
             - name: Terraform init
               run: terraform init
