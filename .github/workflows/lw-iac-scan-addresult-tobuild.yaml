@@ -1,4 +1,4 @@
-name: Lacework SCA/SAST Pull Request 
+name: Lacework IAC Scan to upload result to build 
 
 on: 
   pull_request: 
@@ -34,7 +34,7 @@ jobs:
 
       # Step 3: Run the Lacework SCA scan on the source branch and save the output 
       - name: Run Lacework SCA Scan on Source Branch 
-        run: lacework iac scan ./   --format table --save-result /tmp/lacework-iac-scan-master.json
+        run: lacework iac scan --format table --save-result /tmp/lacework-iac-scan-master.json --directory=.
       #  run: lacework sca scan ./ -f sarif -o lacework-scan-master.sarif
         # Scan the source branch code, output in SARIF format, and save to /tmp/lacework-scan-source.json 
 
