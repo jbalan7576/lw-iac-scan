@@ -51,6 +51,5 @@ jobs:
               run: |
                   pwd
                   ls -l
-                  cd ..
-                  ls -l
+                  cd ./aws/7.4/single
                   terraform init
