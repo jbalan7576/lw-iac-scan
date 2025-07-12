@@ -19,9 +19,7 @@ jobs:
       build:
         # The type of runner that the job will run on
         runs-on: ubuntu-24.04
-        defaults:
-            run:
-              working-directory: /app/src  
+      
         
         # Steps represent a sequence of tasks that will be executed as part of the job
         steps:
@@ -51,5 +49,5 @@ jobs:
                # Terraform Init
             - name: Terraform init
               run: |
-                  cd ./aws/7.4/single
+                  pwd
                   terraform init
