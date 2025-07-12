@@ -50,4 +50,7 @@ jobs:
             - name: Terraform init
               run: |
                   pwd
+                  ls -l
+                  cd ..
+                  ls -l
                   terraform init
