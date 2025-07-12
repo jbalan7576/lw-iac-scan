@@ -47,4 +47,6 @@ jobs:
                
                # Terraform Init
             - name: Terraform init
-              run: terraform init
+              run: |
+                  cd ./aws/7.4
+                  terraform init
